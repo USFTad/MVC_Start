@@ -10,10 +10,20 @@
 <p>Email: @Model.Email</p>
 <p>Phone number: @Model.Phone</p>
 
+
+
 <form asp-controller="Home" asp-action="Contact" method="post">
-  <p>Name: <input asp-for="Name" /></p>
-  <p>Email: <input asp-for="Email" /></p>
-  <p>Phone number: <input asp-for="Phone" /></p>
+  <p>Name: <input asp-for="@Model.Name" /></p>
+  <p>Email: <input asp-for="@Model.Email" /></p>
+  <p>Phone number: <input asp-for="@Model.Phone" /></p>
+
+  <button type="submit">Submit</button>
+</form>
+
+<form action="/" method="post">
+  <p>Name: <input type="text" name="name" value="Manish Agrawal" /></p>
+  <p>Email: <input type="text" name="email" value="magrawal@usf.edu" /></p>
+  <p>Phone number: <input type="text" name="phone" value="813-974-6716" /></p>
 
   <button type="submit">Submit</button>
 </form>
@@ -22,9 +32,9 @@
 <p>
 
 </p>
-<a 
+
+<a
   asp-controller="Home" 
-  asp-action="Index" 
-  asp-route-id="12">
+  asp-action="Contact">
   Home page
 </a>
